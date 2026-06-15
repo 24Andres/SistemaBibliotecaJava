@@ -14,6 +14,10 @@ public class Prestamo {
         return usuario;
     }
     public Libro getLibro(){
+
         return libro;
     }
+
+
+
 }

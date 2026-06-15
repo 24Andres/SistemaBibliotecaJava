@@ -14,18 +14,27 @@ public class Libro {
 
     }
 
-
+    //get
     public int getId(){
         return id;
     }
     public String getTitulo(){
+
         return titulo;
     }
+
     public String getAutor(){
         return autor;
     }
     public int getStock(){
+
         return stock;
     }
+    //set
+    public void setStock (int stock){
+
+        this.stock=stock;
+    }
+
 
 }

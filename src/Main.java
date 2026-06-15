@@ -29,6 +29,13 @@ public class Main {
         listaLibro.add(libro1);
         listaLibro.add(libro2);
         listaLibro.add(libro3);
+
+
+        //reducir stock del libro 1
+        libro1.setStock(libro1.getStock()-10);
+        libro2.setStock(libro2.getStock()-15);
+
+
         //Presentacion libros
         for(int i=0; i < listaLibro.size(); i++){
             System.out.println("Libro No."+listaLibro.get(i).getId()+
@@ -39,12 +46,27 @@ public class Main {
         System.out.println("La cantidad de libros son: "+listaLibro.size());
 
 
+
+
+        // Lista de Prestamos de libros
         System.out.println("\n----- PRESTAMO -----");
+        ArrayList<Prestamo> listaPrestamo = new ArrayList<>();
+
         Prestamo objPrestamo1 = new Prestamo(objUsuario,libro1);
-        System.out.println("Prestamo 1 al señor: "
+        Prestamo objPrestamo2 = new Prestamo(objUsuario,libro2);
+
+        listaPrestamo.add(objPrestamo1);
+        listaPrestamo.add(objPrestamo2);
+
+        for(int i = 0; i<listaPrestamo.size(); i++){
+            System.out.println("usuario: "+listaPrestamo.get(i).getUsuario().getNombre()+
+                    ", Libro: "+listaPrestamo.get(i).getLibro().getTitulo());
+        }
+
+       /* System.out.println("Prestamo 1 al señor: "
                 +objPrestamo1.getUsuario().getNombre()+", Libro: "
                 +objPrestamo1.getLibro().getTitulo()+", con ID: "
-                +objPrestamo1.getLibro().getId());
+                +objPrestamo1.getLibro().getId());*/
 
 
 
