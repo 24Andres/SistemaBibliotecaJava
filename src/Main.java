@@ -3,12 +3,14 @@ import modelo.Prestamo;
 import modelo.Usuario;
 import java.util.ArrayList;
 import modelo.Libro;
-
+import servicio.BibliotecaService;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
+        BibliotecaService objBlibioteca = new BibliotecaService();
+        objBlibioteca.saludar();
 
         Usuario objUsuario = new Usuario("Andres", "132132", "45@gmial.com");
         System.out.println("Los datos del usuario son: \nNombre: "+objUsuario.getNombre()+" \nC.C. "+objUsuario.getDocumento()+" \nCorreo: "+objUsuario.getCorreo());
