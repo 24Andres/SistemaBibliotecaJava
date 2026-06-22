@@ -9,9 +9,6 @@ import servicio.BibliotecaService;
 public class Main {
     public static void main(String[] args) {
 
-        BibliotecaService objBlibioteca = new BibliotecaService();
-        objBlibioteca.saludar();
-
         Usuario objUsuario = new Usuario("Andres", "132132", "45@gmial.com");
         System.out.println("Los datos del usuario son: \nNombre: "+objUsuario.getNombre()+" \nC.C. "+objUsuario.getDocumento()+" \nCorreo: "+objUsuario.getCorreo());
 
@@ -22,6 +19,8 @@ public class Main {
 
 
         System.out.println("______________________________\n");
+        BibliotecaService objBlibiotecaService = new BibliotecaService();
+        objBlibiotecaService.saludar();
 
         //Agregar libros
         ArrayList<Libro> listaLibro = new ArrayList<>();
@@ -32,22 +31,12 @@ public class Main {
         listaLibro.add(libro2);
         listaLibro.add(libro3);
 
-
         //reducir stock del libro 1
         libro1.setStock(libro1.getStock()-10);
         libro2.setStock(libro2.getStock()-15);
 
-
-        //Presentacion libros
-        for(int i=0; i < listaLibro.size(); i++){
-            System.out.println("Libro No."+listaLibro.get(i).getId()+
-                    ", Titulo: "+listaLibro.get(i).getTitulo()+" " +
-                    ", Autor: "+listaLibro.get(i).getAutor()+
-                    ", Stock: "+listaLibro.get(i).getStock() );
-        }
-        System.out.println("La cantidad de libros son: "+listaLibro.size());
-
-
+        //mostrar lista de libros:
+        objBlibiotecaService.mostrarLibro(listaLibro);
 
 
         // Lista de Prestamos de libros
@@ -65,20 +54,13 @@ public class Main {
                     ", Libro: "+listaPrestamo.get(i).getLibro().getTitulo());
         }
 
-       /* System.out.println("Prestamo 1 al señor: "
-                +objPrestamo1.getUsuario().getNombre()+", Libro: "
-                +objPrestamo1.getLibro().getTitulo()+", con ID: "
-                +objPrestamo1.getLibro().getId());*/
-
-
-
-
-        }
 
 
 
 
     }
+
+}
 
 
 
